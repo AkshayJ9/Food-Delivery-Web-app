@@ -1,0 +1,82 @@
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  background: url("/header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+  filter: blur(0.1px);
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+
+/* Text Styling */
+.header-contents h2 {
+  font-weight: 500;
+  color: white;
+  font-size: clamp(22px, 4.5vw, 36px); /* Makes font responsive */
+}
+
+.header-contents p {
+  color: white;
+  font-size: clamp(14px, 1vw, 18px); /* Responsive paragraph text */
+}
+
+/* Button Styling */
+.header-contents button {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: white;
+  font-size: clamp(13px, 1vw, 16px);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Media Query Adjustments */
+@media (max-width: 1050px) {
+  .header-contents {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 55%;
+  }
+  .header-contents p {
+    display: none; /* Hide paragraph text on small screens */
+  }
+  .header-contents button {
+    padding: 2vw 4vw; /* Larger padding for smaller screens */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 500px) {
+  .header {
+    height: 50vh; /* Adjust header height for better fit */
+    background-size: cover;
+  }
+  .header-contents {
+    max-width: 80%; /* Allow more room for content */
+    left: 4vw;
+  }
+  .header-contents h2 {
+    font-size: clamp(18px, 5vw, 24px); /* Smaller title text */
+  }
+  .header-contents button {
+    padding: 3vw 5vw; /* Increase button padding */
+    font-size: clamp(12px, 4vw, 16px);
+  }
+}

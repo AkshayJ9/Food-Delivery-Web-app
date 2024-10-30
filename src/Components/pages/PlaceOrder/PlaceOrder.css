@@ -1,0 +1,91 @@
+.place-order {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 100px;
+  flex-wrap: wrap; /* Allows items to stack on smaller screens */
+}
+
+.place-order-left,
+.place-order-right {
+  width: 100%;
+  max-width: max(30%, 500px); /* Adjusting max-width for both columns */
+}
+
+/* Title styling */
+.place-order-left .title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+/* Input fields */
+.place-order-left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline-color: tomato;
+}
+
+/* Multi-fields */
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 10px;
+}
+
+/* Cart total button */
+.place-order-right .cart-total button {
+  margin-top: 30px;
+}
+
+/* Media query for tablet screens */
+@media (max-width: 1024px) {
+  .place-order {
+    gap: 30px; /* Reduce gap for smaller screens */
+  }
+
+  .place-order-left,
+  .place-order-right {
+    max-width: 100%; /* Make columns full-width */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .place-order {
+    margin-top: 50px;
+    gap: 20px;
+  }
+
+  .place-order-left .title {
+    font-size: 24px; /* Reduce title size */
+  }
+
+  .place-order-left input {
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .place-order-left .multi-fields {
+    flex-direction: column; /* Stack fields vertically */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .place-order {
+    flex-direction: column; /* Stack left and right sections */
+    align-items: center;
+  }
+
+  .place-order-left .title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .place-order-left input {
+    padding: 8px;
+  }
+}

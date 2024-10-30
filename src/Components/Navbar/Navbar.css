@@ -1,0 +1,173 @@
+/* General Styles */
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Ensure navbar is positioned relative */
+}
+
+.navbar .logo {
+  width: 150px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 18px;
+}
+.dot {
+  position: absolute; /* Position it absolutely relative to the Link */
+  width: 10px; /* Width of the dot */
+  height: 10px; /* Height of the dot */
+  background-color: red; /* Color of the dot */
+  border-radius: 50%; /* Makes the dot circular */
+  top: -20px; /* Move it above the icon */
+  right: -5px; /* Move it to the right of the icon */
+  /* Adjust the top and right values to position the dot precisely */
+}
+
+.btn {
+  color: tomato;
+  background-color: white;
+  border-radius: 200px;
+  font-size: 20px;
+  padding: 12px 24px; /* More padding for a better look */
+  margin: 10px;
+  border: 2px solid tomato; /* Add a border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s; /* Smooth transitions */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+/* Hover Effects */
+.btn:hover {
+  background-color: tomato;
+  color: white;
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 18px; /* Slightly smaller font on tablets */
+    padding: 10px 20px; /* Less padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 16px; /* Smaller font size for mobile */
+    padding: 8px 16px; /* Adjust padding for mobile */
+    border-radius: 100px; /* More rounded on smaller screens */
+  }
+}
+
+/* Hide menu by default on mobile */
+.navbar-menu.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute; /* Position it absolute to the navbar */
+  top: 60px; /* Adjust as necessary to fit below the navbar */
+  left: 0;
+  right: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Semi-transparent white background */
+  padding: 10px;
+  z-index: 1000; /* Ensure it's above other components */
+}
+
+/* Style for the overlay */
+.overlay {
+  position: fixed; /* Fixed position to cover the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Semi-transparent black background */
+  z-index: 999; /* Ensure it's below the menu but above other content */
+  display: none; /* Hidden by default */
+}
+
+/* Display overlay when the menu is open */
+.overlay.show {
+  display: block; /* Show overlay */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.navbar-right img {
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #49557e;
+  transition: 0.3s;
+}
+
+/* Transform hamburger to 'X' when open */
+.hamburger .open:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger .open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger .open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .logo {
+    width: 100px;
+  }
+
+  .navbar-menu {
+    display: none; /* Hide menu initially on mobile */
+  }
+
+  .navbar-menu.show {
+    display: flex; /* Show menu when toggled */
+  }
+
+  .navbar-right {
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+}
